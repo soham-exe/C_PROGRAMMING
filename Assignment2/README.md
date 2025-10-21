@@ -6,20 +6,21 @@ PROGRAM1:
 | Enter number -7     |  * * * * * * *       |
 
 PROGRAM2:
-| Input               | Output        |
-| ------------------- | ------------- |
-|         -           |   -           |
+| Input               | Output               |
+| ------------------- | -------------------- |
+| Enter number 5      |  * * * * *           |
+| Enter number 10     |  * * * * * * * * * * |
+| Enter number -7     |  * * * * * * *       |
 
 PROGRAM3:
 | Input               | Output        |
 | ------------------- | ------------- |
-|         -           | -             |
+|         -           |   -           |
 
 PROGRAM4:
-| Input           | Output              |
-| --------------  | ---------------     |
-| -               |              -      |
-
+| Input               | Output        |
+| ------------------- | ------------- |
+|         -           | -             |
 
 PROGRAM5:
 | Input           | Output           |
