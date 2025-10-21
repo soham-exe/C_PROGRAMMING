@@ -3,24 +3,25 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  function name : Display
-//  description :   It accepts number from user and display's "Hello" 
-//                  if number is less than 10 or else Display's "Demo"
-//  Input :         integer
+//  description :   It accepts two numbers from user and display's first number in
+//                  second number of times
+//  Input :         integer ,integer
 //  Output :        string
 //  Author :        soham sachin sonar
 //  Date :          21/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-void Display(int iNo)
+void Display(int iNo,int iFrequency)
 {
-    if(iNo < 10)                //business logic
+    int iCnt = 0;
+    if(iFrequency < 0)                  // business logic
     {
-        printf("Hello");
+        iFrequency = -iFrequency;
     }
-    else
+    for(iCnt = 1; iCnt <= iFrequency;iCnt++)
     {
-        printf("Demo");
+        printf(" %d ",iNo);
     }
 }
 
@@ -33,11 +34,15 @@ void Display(int iNo)
 int main()
 {   
     int iValue = 0;
-
+    int iCount = 0;
+    
     printf("Enter number ");
     scanf("%d",&iValue);
 
-    Display(iValue);
+    printf("Enter frequency ");
+    scanf("%d",&iCount);
+
+    Display(iValue,iCount);
 
     return 0;
 }
