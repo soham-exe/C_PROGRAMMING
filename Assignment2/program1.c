@@ -2,21 +2,26 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  function name : Accept
-//  description :   It is used to Accept a bumber from user and display that number of * on screen
+//  function name : Display
+//  description :   It accepts number from user and display's that number of "*"
 //  Input :         integer
 //  Output :        string
 //  Author :        soham sachin sonar
 //  Date :          21/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////
-void Accept(int iNo)
+void Display(int iNo)
 {
     int iCnt = 0;
-
-    for(iCnt = 1;iCnt <= iNo;iCnt++)            // Business logic
+    
+    if (iNo < 0)                  // Updater
+    {
+        iNo = -iNo;
+    }
+    while(iCnt < iNo)            // Business logic
     {
         printf(" * ");
+        iCnt++;
     }
 }
 
@@ -29,8 +34,10 @@ void Accept(int iNo)
 int main()
 {
     int iValue = 0;
-    iValue = 5;
+    
+    printf("Enter number ");
+    scanf("%d",&iValue);
+    Display(iValue);
 
-    Accept(iValue);
     return 0;
 }

@@ -26,6 +26,6 @@ PROGRAM4:
 PROGRAM5:
 | Input           | Output           |
 | --------------  | ---------------- |
-| iValue = 5      | *****            |
+| iValue = 5      |  * * * * *       |
 
 
