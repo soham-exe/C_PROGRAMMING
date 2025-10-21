@@ -1,23 +1,26 @@
 PROGRAM1:
-| Input               | Output               |
-| ------------------- | -------------------- |
-| Enter number 5      |  * * * * *           |
-| Enter number 10     |  * * * * * * * * * * |
-| Enter number -7     |  * * * * * * *       |
+| **#** | **User Input**     | **Program Output**    |
+| :---: | ------------------ | --------------------- |
+|   1   | `Enter number: 5`  | `* * * * *`           |
+|   2   | `Enter number: 10` | `* * * * * * * * * *` |
+|   3   | `Enter number: -7` | `* * * * * * *`       |
+
 
 PROGRAM2:
-| Input               | Output               |
-| ------------------- | -------------------- |
-| Enter number 5      |  * * * * *           |
-| Enter number 10     |  * * * * * * * * * * |
-| Enter number -7     |  * * * * * * *       |
+| **#** | **User Input**     | **Program Output**    |
+| :---: | ------------------ | --------------------- |
+|   1   | `Enter number: 5`  | `* * * * *`           |
+|   2   | `Enter number: 10` | `* * * * * * * * * *` |
+|   3   | `Enter number: -7` | `* * * * * * *`       |
+
 
 PROGRAM3:
-| Input               | Output               |
-| ------------------- | -------------------- |
-| Enter number 3      | Hello                |
-| Enter number 11     | Demo                 |
-| Enter number 10     | Demo                 |
+| **#** | **User Input**     | **Program Output** |
+| :---: | ------------------ | ------------------ |
+|   1   | `Enter number: 3`  | `Hello`            |
+|   2   | `Enter number: 11` | `Demo`             |
+|   3   | `Enter number: 10` | `Demo`             |
+
 
 PROGRAM4:
 | **#** | **User Input** | **Program Output** |
