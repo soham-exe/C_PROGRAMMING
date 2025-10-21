@@ -1,10 +1,11 @@
 #include<stdio.h>
+
 ////////////////////////////////////////////////////////////////////////////////
 //
 //  function name : Display
-//  description :   It is used to Display "Marvellous" 5 times
+//  description :   It is used to Display 5 to 1
 //  Input :         void
-//  Output :        void
+//  Output :        string
 //  Author :        soham sachin sonar
 //  Date :          21/10/2025
 //
@@ -13,9 +14,11 @@ void Display()
 {
     int i = 0;
 
-    for(i = 1;i<=5;i++)
+    i = 5;
+    while(i >= 1)                   // Business logic
     {
-        printf("Marvellous\n");         // Business logic
+        printf("%d",i);
+        i--;
     }
 }
 
