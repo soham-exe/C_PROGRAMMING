@@ -30,6 +30,14 @@ PROGRAM4:
 | 3 | `Enter number 21`<br>`Enter frequency -3` | `21 21 21` |
 | 4 | `Enter number -2`<br>`Enter frequency 0` | *(no output)* |
 
+PROGRAM5:
+| **#** | **User Input**     | **Program Output**  |
+| :---: | ------------------ | ------------------- |
+|   1   | `Enter number 7`  | `7 is Odd number`   |
+|   2   | `Enter number 6`  | `6 is Even number`  |
+|   3   | `Enter number 2`  | `2 is Even number`  |
+|   4   | `Enter number -3` | `-3 is Odd number`  |
+|   5   | `Enter number -2` | `-2 is Even number` |
 
 
 
