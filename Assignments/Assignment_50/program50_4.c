@@ -176,7 +176,26 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : DisplayAlternate
+//  Description   : Display Alternate Nodes.
+//  Input         : PNODE
+//  Output        : void
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+void DisplayAlternate(PNODE first) 
+{
+    while (first != NULL)
+    {
+        printf("| %d |->",first->data);
+        first = first->next->next;
+    }
+    printf("NULL\n");
+}
+
 
 int main()
 {
@@ -187,5 +206,6 @@ int main()
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    DisplayAlternate(head);
     return 0;
 }

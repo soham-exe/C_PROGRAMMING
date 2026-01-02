@@ -176,7 +176,38 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : DisplayGreaterThanAvg
+//  Description   : Display Elements Greater Than Average.
+//  Input         : PNODE
+//  Output        : void
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+void DisplayGreaterThanAvg(PNODE first) 
+{
+    int Avg = 0,iCnt = 0,iSum = 0;
+    PNODE temp = first;
+    while(temp != NULL)
+    {
+        iSum += temp->data;
+        iCnt++;
+        temp = temp->next;
+    }
+    Avg = iSum/iCnt;
+    while(first != NULL)
+    {
+       if(first->data > Avg)
+       {
+            printf("| %d |->",first->data);
+       } 
+       first = first->next;
+    }
+    printf("NULL\n");
+}
+
 
 int main()
 {
@@ -187,5 +218,6 @@ int main()
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    DisplayGreaterThanAvg(head);
     return 0;
 }

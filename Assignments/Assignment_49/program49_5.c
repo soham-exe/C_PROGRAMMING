@@ -176,16 +176,53 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : CountTwoDigit
+//  Description   : Count how many elements in the list consist of exactly two digits (10 to 99).
+//  Input         : PNODE
+//  Output        : int
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
 
+
+int CountTwoDigit(PNODE first)
+{
+    int iCnt = 0,iCount = 0,num = 0;
+    while(first != NULL)
+    {
+        num = first->data;
+        if(num % 10 != '\0')
+        {
+            iCnt++;
+        }
+        num = num/10;
+        if(num % 10 != '\0')
+        {
+            iCnt++;
+        }
+        if(iCnt == 2)
+        {
+            iCount++;
+        }
+        iCnt = 0;
+        first = first->next;
+    }
+    return iCount;
+}
 int main()
 {
     PNODE head = NULL;
+    int iRet = 0;
     InsertFirst(&head,15);
     InsertFirst(&head,14);
     InsertFirst(&head,13);
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    iRet = CountTwoDigit(head);
+    printf("%d",iRet);
     return 0;
 }

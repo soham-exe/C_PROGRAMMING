@@ -176,7 +176,29 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : DisplayDivByThree
+//  Description   : Traverse the list and print only those elements that are divisible by 3
+//  Input         : PNODE
+//  Output        : void
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+
+void DisplayDivByThree(PNODE first)
+{
+    while(first != NULL)
+    {
+        if((first->data) % 3 == 0)
+        {
+            printf("| %d |->",first->data);
+        }
+        first = first->next;
+    }
+    printf("NULL\n");
+}
 
 int main()
 {
@@ -187,5 +209,6 @@ int main()
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    DisplayDivByThree(head);
     return 0;
 }

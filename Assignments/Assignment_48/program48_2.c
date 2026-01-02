@@ -176,7 +176,30 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : ReplaceOdd
+//  Description   : replace odd value nodes with 1
+//  Input         : PPNODE
+//  Output        : void
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+
+void ReplaceOdd(PPNODE first)
+{
+    PNODE temp = NULL;
+    temp = *first;
+    while(temp != NULL)
+    {
+        if((temp->data)%2 != 0)
+        {
+            temp->data = 1;
+        }
+        temp = temp->next;
+    }
+}
 
 int main()
 {
@@ -187,5 +210,8 @@ int main()
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    ReplaceOdd(&head);
+    Display(head);
     return 0;
 }
+

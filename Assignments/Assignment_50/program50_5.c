@@ -166,7 +166,7 @@ int Count(PNODE first)
     }
     return iCount;
 }
-void Display(PNODE first)
+void DisplayAll(PNODE first)
 {
     while (first != NULL)
     {
@@ -176,8 +176,30 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
-
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : Display
+//  Description   : Display Node at Nth Position.
+//  Input         : PNODE Head, int pos
+//  Output        : void
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+void Display(PNODE first, int pos) 
+{
+    int iPos = 1;
+    while(first != NULL)
+    {
+        if(iPos == pos)
+        {
+            printf("| %d |->",first->data);
+            break;
+        }
+        iPos++;
+        first = first->next;
+    }
+}
 int main()
 {
     PNODE head = NULL;
@@ -186,6 +208,7 @@ int main()
     InsertFirst(&head,13);
     InsertFirst(&head,12);
     InsertFirst(&head,11);
-    Display(head);
+    DisplayAll(head);
+    Display(head,2);
     return 0;
 }

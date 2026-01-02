@@ -176,16 +176,41 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : MakeAbsolute
+//  Description   : Replace Negative Numbers with Absolute Value.
+//  Input         : PPNODE
+//  Output        : void
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+void MakeAbsolute(PPNODE first) 
+{
+    PNODE temp = *first;
+    while(temp != NULL)
+    {
+        if(temp->data < 0)
+        {
+            temp->data = -(temp->data);
+        }
+        temp = temp->next;
+    }
+}
 
 int main()
 {
     PNODE head = NULL;
     InsertFirst(&head,15);
     InsertFirst(&head,14);
-    InsertFirst(&head,13);
-    InsertFirst(&head,12);
+    InsertFirst(&head,-13);
+    InsertFirst(&head,-12);
     InsertFirst(&head,11);
+    Display(head);
+    MakeAbsolute(&head);
     Display(head);
     return 0;
 }
+
+

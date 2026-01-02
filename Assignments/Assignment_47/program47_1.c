@@ -176,7 +176,27 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : DisplayReverse
+//  Description   : print list in reverse
+//  Input         : PNODE
+//  Output        : void
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+
+void DisplayReverse(PNODE first)
+{
+    if (first == NULL)
+    {
+        return;
+    }
+
+    DisplayReverse(first->next);
+    printf("| %d |->", first->data);
+}
 
 int main()
 {
@@ -187,5 +207,6 @@ int main()
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    DisplayReverse(head);
     return 0;
 }

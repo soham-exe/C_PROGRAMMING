@@ -176,7 +176,30 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : ReplaceEven
+//  Description   : replace even value nodes with 0
+//  Input         : PPNODE
+//  Output        : void
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+
+void ReplaceEven(PPNODE first)
+{
+    PNODE temp = NULL;
+    temp = *first;
+    while(temp != NULL)
+    {
+        if((temp->data)%2 == 0)
+        {
+            temp->data = 0;
+        }
+        temp = temp->next;
+    }
+}
 
 int main()
 {
@@ -186,6 +209,8 @@ int main()
     InsertFirst(&head,13);
     InsertFirst(&head,12);
     InsertFirst(&head,11);
+    Display(head);
+    ReplaceEven(&head);
     Display(head);
     return 0;
 }

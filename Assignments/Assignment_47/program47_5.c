@@ -176,16 +176,53 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : CountPrime
+//  Description   : count number of nodes with prime values
+//  Input         : PNODE
+//  Output        : int
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+
+int CountPrime(PNODE first)
+{
+    int iCnt = 0;
+    while(first != NULL)
+    {   
+        int n = first->data;
+        for(int i = 2; (i*i) <= n;i++)
+        {
+            if((first->data)%i == 0)
+            {
+                break;
+            }
+            else
+            {
+                iCnt++;
+                break;
+            }
+        }
+        first = first->next;
+    }
+    return iCnt;
+}
 
 int main()
 {
     PNODE head = NULL;
+    int iRet = 0;
     InsertFirst(&head,15);
     InsertFirst(&head,14);
     InsertFirst(&head,13);
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+
+    iRet = CountPrime(head);
+    printf("count of nodes with prime values is : %d",iRet);
+
     return 0;
 }

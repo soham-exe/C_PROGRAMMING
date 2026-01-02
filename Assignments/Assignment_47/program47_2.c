@@ -176,7 +176,36 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : CountDigits
+//  Description   : count digits of each node
+//  Input         : PNODE
+//  Output        : void
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+
+void CountDigits(PNODE first)
+{
+    int Digit = 0,iCnt = 0,number = 0;
+    while(first != NULL)
+    {   
+        number = first->data;
+        Digit = number%10;
+        while(Digit != '\0')
+        {
+            iCnt++;
+            number /= 10;
+            Digit = number % 10;
+        }
+        first = first->next;
+    }
+
+    printf("%d digits",iCnt);
+}
+
 
 int main()
 {
@@ -187,5 +216,8 @@ int main()
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+
+    CountDigits(head);
+    
     return 0;
 }

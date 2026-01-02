@@ -176,7 +176,27 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : MultiplyByTwo
+//  Description   : multiple value nodes with 2
+//  Input         : PPNODE
+//  Output        : void
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+
+void MultiplyByTwo(PPNODE first)
+{
+    PNODE temp = NULL;
+    temp = *first;
+    while(temp != NULL)
+    {
+        temp->data = (temp->data)*2;
+        temp = temp->next;
+    }
+}
 
 int main()
 {
@@ -187,5 +207,8 @@ int main()
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    MultiplyByTwo(&head);
+    Display(head);
     return 0;
 }
+

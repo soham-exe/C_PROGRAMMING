@@ -176,16 +176,41 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : CountDivByFive
+//  Description   : Count how many elements in the list are divisible by 5.
+//  Input         : PNODE
+//  Output        : int
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
 
+int CountDivByFive(PNODE first)
+{
+    int iCnt = 0;
+    while(first != NULL)
+    {
+        if((first->data) % 5 == 0)
+        {
+            iCnt++;
+        }
+        first = first->next;
+    }
+    return iCnt;
+}
 int main()
 {
     PNODE head = NULL;
+    int iRet = 0;
     InsertFirst(&head,15);
     InsertFirst(&head,14);
     InsertFirst(&head,13);
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    iRet = CountDivByFive(head);
+    printf("divisible by 5 : %d",iRet);
     return 0;
 }

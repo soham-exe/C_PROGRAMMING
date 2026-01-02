@@ -176,16 +176,52 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : CheckSorted
+//  Description   : Check Whether List Is Sorted (Ascending order).
+//  Input         : PNODE
+//  Output        : bool
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+bool CheckSorted(PNODE first) 
+{
+    bool bFlag = true;
+
+    while (first->next != NULL)
+    {
+        if(first->data > first->next->data)
+        {
+            bFlag = false;
+            break;
+        }
+        first = first->next;
+    }
+    
+    return bFlag;
+}
+
 
 int main()
 {
     PNODE head = NULL;
-    InsertFirst(&head,15);
+    bool bRet = false;
+    InsertFirst(&head,10);
     InsertFirst(&head,14);
     InsertFirst(&head,13);
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    bRet = CheckSorted(head);
+    if(bRet)
+    {
+        printf("Sorted!\n");
+    }
+    else
+    {
+        printf("Not Sorted!\n");
+    }
     return 0;
 }

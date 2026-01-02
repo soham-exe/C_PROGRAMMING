@@ -176,7 +176,31 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : DisplayEvenPosition
+//  Description   : display node with even pos.
+//  Input         : PNODE
+//  Output        : void
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+
+void DisplayEvenPosition(PNODE first)
+{
+    int iPos = 1;
+    while(first != NULL)
+    {
+        if(iPos % 2 == 0)
+        {
+            printf("| %d |->",first->data);
+        }
+        iPos++;
+        first = first->next;
+    }
+    printf("NULL\n");
+}
 
 int main()
 {
@@ -187,5 +211,7 @@ int main()
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    DisplayEvenPosition(head);
     return 0;
 }
+

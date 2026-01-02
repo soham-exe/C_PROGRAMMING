@@ -176,16 +176,47 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : Difference
+//  Description   : Calculate the difference between the maximum and minimum values in the list.
+//  Input         : PNODE
+//  Output        : int
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
 
+int Difference(PNODE first)
+{
+    int max = 0,min = 0;
+    max = first->data;
+    min = first->data;
+    while(first != NULL)
+    {
+        if(first->data > max)
+        {
+            max = first->data;
+        }
+        else if(first->data < min)
+        {
+            min = first->data;
+        }
+        first = first->next;
+    }
+    return max - min;
+}
 int main()
 {
     PNODE head = NULL;
+    int iRet = 0;
     InsertFirst(&head,15);
     InsertFirst(&head,14);
     InsertFirst(&head,13);
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    iRet = Difference(head);
+    printf("Diffrence : %d",iRet);
     return 0;
 }

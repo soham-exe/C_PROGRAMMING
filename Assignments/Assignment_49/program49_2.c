@@ -176,16 +176,49 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : CheckAllPositive
+//  Description   : Verify if every element in the list is strictly greater than zero. 
+//  Input         : PNODE
+//  Output        : bool
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
 
+bool CheckAllPositive(PNODE first)
+{
+    bool bFlag = true;
+    while(first != NULL)
+    {
+        if(first->data < 0)
+        {
+            bFlag = false;
+            break;
+        }
+        first = first->next;
+    }
+    return bFlag;
+}
 int main()
 {
     PNODE head = NULL;
+    bool bRet = false;
     InsertFirst(&head,15);
     InsertFirst(&head,14);
     InsertFirst(&head,13);
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    bRet = CheckAllPositive(head);
+    if(bRet)
+    {
+        printf("All are Positive");
+    }
+    else
+    {
+        printf("ALL are not Positive");
+    }
     return 0;
 }

@@ -176,7 +176,38 @@ void Display(PNODE first)
     printf("NULL\n");
 }
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : DisplayPrime
+//  Description   : displays nodes with prime values 
+//  Input         : PNODE
+//  Output        : void
+//  Author        : Soham Sachin Sonar
+//  Date          : 02/01/2026
+//
+////////////////////////////////////////////////////////////////////////////////
+
+void DisplayPrime(PNODE first)
+{
+    while(first != NULL)
+    {   
+        int n = first->data;
+        for(int i = 2; (i*i) <= n;i++)
+        {
+            if((first->data)%i == 0)
+            {
+                break;
+            }
+            else
+            {
+                printf("| %d |->",n);
+                break;
+            }
+        }
+        first = first->next;
+    }
+    printf("NULL\n");
+}
 
 int main()
 {
@@ -187,5 +218,6 @@ int main()
     InsertFirst(&head,12);
     InsertFirst(&head,11);
     Display(head);
+    DisplayPrime(head);
     return 0;
 }
